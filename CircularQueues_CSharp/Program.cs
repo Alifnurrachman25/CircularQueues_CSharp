@@ -45,6 +45,27 @@ namespace CircularQueues_CSharp
             /* Once the position of REAR is determined, the element is added at its proper place */
             queue_array[REAR] = element;
         }
+        public void remove()
+        {
+            /*Checks whether the queue is empty. */
+            if (FRONT == -1)
+            {
+                Console.WriteLine("Queue underflow\n");
+                return;
+            }
+            Console.WriteLine("\n The element deleted from the queue is: " + queue_array[FRONT] + "\n");
+            /* Checks if the queue has one element. */
+            if (FRONT == REAR)
+            {
+                FRONT = -1;
+                REAR = -1;
+            }
+            else
+            {
+                /* Front is incremented by one if it is not the first element of array. */
+                FRONT = FRONT + 1;
+            }
+        }
         static void Main(string[] args)
         {
         }
